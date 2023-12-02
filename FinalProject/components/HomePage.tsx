@@ -17,16 +17,11 @@ export default function HomePage({ flagInfo }: { flagInfo: string }) {
           }}
         />
       </View>
-      <View
-        style={styles.separator}
-        lightColor="#eee"
-        darkColor="rgba(255,255,255,0.1)"
-      />
       <View style={styles.buttonContainer}>
-        <Text style={styles.getStartedText}>Flagship Trivia </Text>
+        <Text style={styles.titleText}>Flagship Trivia</Text>
         <Link href="/two" asChild>
           <Pressable>
-            <Text style={styles.getStartedText}>Home</Text>
+            <Text style={styles.startText}>START</Text>
           </Pressable>
         </Link>
       </View>
@@ -50,10 +45,17 @@ const styles = StyleSheet.create({
     borderRadius: 3,
     paddingHorizontal: 4,
   },
-  getStartedText: {
-    fontSize: 17,
-    lineHeight: 24,
+  titleText: {
+    fontSize: 35,
     textAlign: "center",
+    fontFamily: "Times New Roman",
+  },
+  startText: {
+    fontSize: 20,
+    fontFamily: "Times New Roman",
+    textAlign: "center",
+    color: "blue",
+    padding: 20,
   },
   separator: {
     marginVertical: 30,
@@ -64,12 +66,10 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: "column",
     alignSelf: "center",
-    backgroundColor: "red",
   },
   flagImage: {
     resizeMode: "contain",
     height: 100,
     width: 200,
-    backgroundColor: "green",
   },
 });
