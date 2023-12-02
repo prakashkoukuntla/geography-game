@@ -3,26 +3,25 @@ import { Button, StyleSheet, Image } from "react-native";
 
 import Colors from "../constants/Colors";
 import { Text, View } from "./Themed";
+import backend from "../app/backend";
 
 export default function ButtonTrivia({ flagInfo }: { flagInfo: string }) {
+  let data = backend();
+
   return (
     <View>
       <View style={styles.imageContainer}>
         <Image
           style={styles.flagImage}
           source={{
-            uri: "https://reactnative.dev/img/tiny_logo.png",
+            uri: data[0],
           }}
         />
       </View>
       <View style={styles.separator} />
       <View style={styles.buttonContainer}>
-        <Text
-          style={styles.getStartedText}
-          lightColor="rgba(0,0,0,0.8)"
-          darkColor="rgba(255,255,255,0.8)"
-        >
-          {flagInfo}
+        <Text style={styles.getStartedText}>
+          What is the name of the country that has the flag?
         </Text>
         <View style={styles.buttonRow}>
           <Button onPress={() => {}} title="Button 1" />
@@ -69,12 +68,10 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: "column",
     alignSelf: "center",
-    backgroundColor: "red",
   },
   flagImage: {
     resizeMode: "contain",
     height: 100,
     width: 200,
-    backgroundColor: "green",
   },
 });
