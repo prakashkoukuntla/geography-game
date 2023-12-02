@@ -8,32 +8,30 @@ import { Text, View } from "./Themed";
 export default function HomePage({ flagInfo }: { flagInfo: string }) {
   function ButtonPress(countryName: string) {}
   return (
-    <View>
+    <View style={{ flex: 1, alignSelf: "stretch" }}>
       <View style={styles.imageContainer}>
-        <Image
-          style={styles.flagImage}
-          source={{
-            uri: "https://reactnative.dev/img/tiny_logo.png",
-          }}
-        />
+        <Text style={styles.emoji}>🏁</Text>
       </View>
-      <View style={styles.buttonContainer}>
+      <View style={styles.titleContainer}>
         <Text style={styles.titleText}>Flagship Trivia</Text>
-        <Link href="/two" asChild>
-          <Pressable>
-            <Text style={styles.startText}>START</Text>
-          </Pressable>
-        </Link>
       </View>
+      <Link href="/two" asChild style={styles.link}>
+        <Pressable>
+          <Text style={styles.startText}>START</Text>
+        </Pressable>
+      </Link>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  buttonContainer: {
-    alignItems: "center",
-    marginHorizontal: 50,
-    flex: 1,
+  titleContainer: {
+    flex: 2,
+    flexDirection: "row",
+    alignSelf: "stretch",
+    margin: 10,
+    justifyContent: "center",
+    alignItems: "flex-start",
   },
   buttonRow: {
     flexDirection: "row",
@@ -46,16 +44,25 @@ const styles = StyleSheet.create({
     paddingHorizontal: 4,
   },
   titleText: {
-    fontSize: 35,
-    textAlign: "center",
+    fontSize: 50,
     fontFamily: "Times New Roman",
+    fontWeight: "bold",
+  },
+  link: {
+    flex: 1,
+    backgroundColor: "blue",
+    flexDirection: "row",
+    alignSelf: "stretch",
+    margin: 10,
+    borderBottomLeftRadius: 40,
+    borderBottomRightRadius: 40,
+    justifyContent: "center",
+    alignItems: "center",
   },
   startText: {
-    fontSize: 20,
+    fontSize: 80,
     fontFamily: "Times New Roman",
-    textAlign: "center",
-    color: "blue",
-    padding: 20,
+    color: "white",
   },
   separator: {
     marginVertical: 30,
@@ -63,13 +70,14 @@ const styles = StyleSheet.create({
     width: "80%",
   },
   imageContainer: {
-    flex: 1,
-    flexDirection: "column",
-    alignSelf: "center",
+    flex: 2,
+    flexDirection: "row",
+    alignSelf: "stretch",
+    margin: 10,
+    justifyContent: "center",
+    alignItems: "center",
   },
-  flagImage: {
-    resizeMode: "contain",
-    height: 100,
-    width: 200,
+  emoji: {
+    fontSize: 150,
   },
 });

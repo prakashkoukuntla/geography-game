@@ -20,21 +20,21 @@ export default function TabLayout() {
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? "light"].tint,
-        //tabBarStyle: { display: "none" },
+        //tabBarActiveTintColor: Colors[colorScheme ?? "light"].tint,
+        tabBarStyle: { display: "none" },
       }}
     >
       <Tabs.Screen
         name="index"
         options={{
-          title: "Tab One",
+          title: "Home",
           tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
         }}
       />
       <Tabs.Screen
         name="two"
         options={{
-          title: "Tab Two",
+          title: "Trivia Question",
           tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
         }}
       />
