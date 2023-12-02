@@ -5,8 +5,20 @@ import Colors from "../constants/Colors";
 import { Text, View } from "./Themed";
 import backend from "../app/backend";
 
+const right_or_wrong = (choice: number, correct: number) => {
+  if (choice == correct) {
+    return 1;
+  } else {
+    return 0;
+  }
+};
+
 export default function ButtonTrivia({ flagInfo }: { flagInfo: string }) {
-  let data = backend();
+  let data = backend(); // randomize button order
+  let correct_answer: number = Math.floor(Math.random() * 4);
+  let temp = data[1][correct_answer];
+  data[1][correct_answer] = data[1][0];
+  data[1][0] = temp;
 
   return (
     <View>
@@ -24,12 +36,12 @@ export default function ButtonTrivia({ flagInfo }: { flagInfo: string }) {
           What is the name of the country that has the flag?
         </Text>
         <View style={styles.buttonRow}>
-          <Button onPress={() => {}} title="Button 1" />
-          <Button onPress={() => {}} title="Button 2" />
+          <Button onPress={() => {}} title={data[1][0]} />
+          <Button onPress={() => {}} title={data[1][1]} />
         </View>
         <View style={styles.buttonRow}>
-          <Button onPress={() => {}} title="Button 3" />
-          <Button onPress={() => {}} title="Button 4" />
+          <Button onPress={() => {}} title={data[1][2]} />
+          <Button onPress={() => {}} title={data[1][3]} />
         </View>
       </View>
     </View>
