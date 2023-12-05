@@ -14,8 +14,8 @@ export default function Correct({ flagInfo }: { flagInfo: string }) {
       <View style={styles.titleContainer}>
         <Text style={styles.titleText}>Correct</Text>
       </View>
-      <View style={styles.link}>
-        <Link href="/">
+      <View style={styles.newLink}>
+        <Link href="/two">
           <Text style={styles.newText}>New Question</Text>
         </Link>
       </View>
@@ -76,13 +76,11 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignSelf: "stretch",
     margin: 10,
-    borderBottomLeftRadius: 40,
-    borderBottomRightRadius: 40,
     justifyContent: "center",
     alignItems: "center",
   },
   newText: {
-    fontSize: 80,
+    fontSize: 50,
     fontFamily: "Times New Roman",
     color: "green",
     textAlign: "center",
@@ -102,6 +100,6 @@ const styles = StyleSheet.create({
     backgroundColor: "green",
   },
   emoji: {
-    fontSize: 150,
+    fontSize: 175,
   },
 });
