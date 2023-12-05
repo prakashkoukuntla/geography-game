@@ -14,10 +14,8 @@ export default function Correct({ flagInfo }: { flagInfo: string }) {
       <View style={styles.titleContainer}>
         <Text style={styles.titleText}>Correct</Text>
       </View>
-      <Link href="/home" asChild style={styles.link}>
-        <Pressable>
-          <Text style={styles.startText}>HOME</Text>
-        </Pressable>
+      <Link href="/" style={styles.link}>
+        <Text style={styles.startText}>HOME</Text>
       </Link>
     </View>
   );
@@ -31,6 +29,7 @@ const styles = StyleSheet.create({
     margin: 10,
     justifyContent: "center",
     alignItems: "flex-start",
+    backgroundColor: "green",
   },
   buttonRow: {
     flexDirection: "row",
@@ -62,6 +61,8 @@ const styles = StyleSheet.create({
     fontSize: 80,
     fontFamily: "Times New Roman",
     color: "green",
+    textAlign: "center",
+    //verticalAlign: "middle",
   },
   separator: {
     marginVertical: 30,
@@ -75,6 +76,7 @@ const styles = StyleSheet.create({
     margin: 10,
     justifyContent: "center",
     alignItems: "center",
+    backgroundColor: "green",
   },
   emoji: {
     fontSize: 150,
