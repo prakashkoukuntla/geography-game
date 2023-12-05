@@ -16,7 +16,12 @@ export default function Correct({ flagInfo }: { flagInfo: string }) {
       </View>
       <View style={styles.link}>
         <Link href="/">
-          <Text style={styles.startText}>HOME</Text>
+          <Text style={styles.newText}>New Question</Text>
+        </Link>
+      </View>
+      <View style={styles.link}>
+        <Link href="/">
+          <Text style={styles.homeText}>HOME</Text>
         </Link>
       </View>
     </View>
@@ -59,12 +64,28 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
-  startText: {
+  homeText: {
+    fontSize: 80,
+    fontFamily: "Times New Roman",
+    color: "black",
+    textAlign: "center",
+  },
+  newLink: {
+    flex: 1,
+    backgroundColor: "white",
+    flexDirection: "row",
+    alignSelf: "stretch",
+    margin: 10,
+    borderBottomLeftRadius: 40,
+    borderBottomRightRadius: 40,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  newText: {
     fontSize: 80,
     fontFamily: "Times New Roman",
     color: "green",
     textAlign: "center",
-    //verticalAlign: "middle",
   },
   separator: {
     marginVertical: 30,
