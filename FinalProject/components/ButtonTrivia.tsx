@@ -41,7 +41,7 @@ export default function ButtonTrivia({ flagInfo }: { flagInfo: string }) {
             onPress={() => {
               0 == correct_answer
                 ? router.push("/correct")
-                : router.push("/home");
+                : router.push("/incorrect");
             }}
             title={data[1][0]}
           />
@@ -49,7 +49,7 @@ export default function ButtonTrivia({ flagInfo }: { flagInfo: string }) {
             onPress={() => {
               1 == correct_answer
                 ? router.push("/correct")
-                : router.push("/home");
+                : router.push("/incorrect");
             }}
             title={data[1][1]}
           />
@@ -59,7 +59,7 @@ export default function ButtonTrivia({ flagInfo }: { flagInfo: string }) {
             onPress={() => {
               2 == correct_answer
                 ? router.push("/correct")
-                : router.push("/home");
+                : router.push("/incorrect");
             }}
             title={data[1][2]}
           />
@@ -67,7 +67,7 @@ export default function ButtonTrivia({ flagInfo }: { flagInfo: string }) {
             onPress={() => {
               3 == correct_answer
                 ? router.push("/correct")
-                : router.push("/home");
+                : router.push("/incorrect");
             }}
             title={data[1][3]}
           />
