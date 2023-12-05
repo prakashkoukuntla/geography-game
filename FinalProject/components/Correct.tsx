@@ -14,9 +14,11 @@ export default function Correct({ flagInfo }: { flagInfo: string }) {
       <View style={styles.titleContainer}>
         <Text style={styles.titleText}>Correct</Text>
       </View>
-      <Link href="/" style={styles.link}>
-        <Text style={styles.startText}>HOME</Text>
-      </Link>
+      <View style={styles.link}>
+        <Link href="/">
+          <Text style={styles.startText}>HOME</Text>
+        </Link>
+      </View>
     </View>
   );
 }

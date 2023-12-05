@@ -15,9 +15,11 @@ export default function HomePage({ flagInfo }: { flagInfo: string }) {
       <View style={styles.titleContainer}>
         <Text style={styles.titleText}>Flagship Trivia</Text>
       </View>
-      <Link href="/correct" asChild style={styles.link}>
-        <Text style={styles.startText}>START</Text>
-      </Link>
+      <View style={styles.link}>
+        <Link href="/two" asChild>
+          <Text style={styles.startText}>START</Text>
+        </Link>
+      </View>
     </View>
   );
 }
