@@ -1,5 +1,6 @@
 import React from "react";
 import { Button, StyleSheet, Image } from "react-native";
+import { router } from "expo-router";
 
 import Colors from "../constants/Colors";
 import { Text, View } from "./Themed";
@@ -38,13 +39,17 @@ export default function ButtonTrivia({ flagInfo }: { flagInfo: string }) {
         <View style={styles.buttonRow}>
           <Button
             onPress={() => {
-              0 == correct_answer ? _ : _;
+              0 == correct_answer
+                ? router.push("/correct")
+                : router.push("/home");
             }}
             title={data[1][0]}
           />
           <Button
             onPress={() => {
-              1 == correct_answer ? _ : _;
+              1 == correct_answer
+                ? router.push("/correct")
+                : router.push("/home");
             }}
             title={data[1][1]}
           />
@@ -52,13 +57,17 @@ export default function ButtonTrivia({ flagInfo }: { flagInfo: string }) {
         <View style={styles.buttonRow}>
           <Button
             onPress={() => {
-              2 == correct_answer ? _ : _;
+              2 == correct_answer
+                ? router.push("/correct")
+                : router.push("/home");
             }}
             title={data[1][2]}
           />
           <Button
             onPress={() => {
-              3 == correct_answer ? _ : _;
+              3 == correct_answer
+                ? router.push("/correct")
+                : router.push("/home");
             }}
             title={data[1][3]}
           />
