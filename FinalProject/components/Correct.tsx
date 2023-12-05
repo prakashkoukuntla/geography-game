@@ -5,19 +5,18 @@ import { Link } from "expo-router";
 import Colors from "../constants/Colors";
 import { Text, View } from "./Themed";
 
-export default function HomePage({ flagInfo }: { flagInfo: string }) {
-  function ButtonPress(countryName: string) {}
+export default function Correct({ flagInfo }: { flagInfo: string }) {
   return (
-    <View style={{ flex: 1, alignSelf: "stretch" }}>
+    <View style={{ flex: 1, alignSelf: "stretch", backgroundColor: "green" }}>
       <View style={styles.imageContainer}>
         <Text style={styles.emoji}>🏁</Text>
       </View>
       <View style={styles.titleContainer}>
-        <Text style={styles.titleText}>Flagship Trivia</Text>
+        <Text style={styles.titleText}>Correct</Text>
       </View>
-      <Link href="/correct" asChild style={styles.link}>
+      <Link href="/home" asChild style={styles.link}>
         <Pressable>
-          <Text style={styles.startText}>START</Text>
+          <Text style={styles.startText}>HOME</Text>
         </Pressable>
       </Link>
     </View>
@@ -50,7 +49,7 @@ const styles = StyleSheet.create({
   },
   link: {
     flex: 1,
-    backgroundColor: "blue",
+    backgroundColor: "white",
     flexDirection: "row",
     alignSelf: "stretch",
     margin: 10,
@@ -62,7 +61,7 @@ const styles = StyleSheet.create({
   startText: {
     fontSize: 80,
     fontFamily: "Times New Roman",
-    color: "white",
+    color: "green",
   },
   separator: {
     marginVertical: 30,
