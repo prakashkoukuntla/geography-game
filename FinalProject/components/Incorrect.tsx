@@ -22,8 +22,7 @@ export default function Incorrect({ flagInfo }: { flagInfo: string }) {
         }}
       />
       <View style={styles.titleContainer}>
-        <Text style={styles.titleText}>Wrong!</Text>
-        <Text style={styles.titleText}>Answer was Brazil.</Text>
+        <Text style={styles.titleText}>Incorrect</Text>
       </View>
       <View style={styles.newLink}>
         <Link href="/two">
