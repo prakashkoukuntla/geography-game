@@ -36,12 +36,32 @@ export default function ButtonTrivia({ flagInfo }: { flagInfo: string }) {
           What is the name of the country that has the flag?
         </Text>
         <View style={styles.buttonRow}>
-          <Button onPress={() => {}} title={data[1][0]} />
-          <Button onPress={() => {}} title={data[1][1]} />
+          <Button
+            onPress={() => {
+              0 == correct_answer ? _ : _;
+            }}
+            title={data[1][0]}
+          />
+          <Button
+            onPress={() => {
+              1 == correct_answer ? _ : _;
+            }}
+            title={data[1][1]}
+          />
         </View>
         <View style={styles.buttonRow}>
-          <Button onPress={() => {}} title={data[1][2]} />
-          <Button onPress={() => {}} title={data[1][3]} />
+          <Button
+            onPress={() => {
+              2 == correct_answer ? _ : _;
+            }}
+            title={data[1][2]}
+          />
+          <Button
+            onPress={() => {
+              3 == correct_answer ? _ : _;
+            }}
+            title={data[1][3]}
+          />
         </View>
       </View>
     </View>
