@@ -7,12 +7,23 @@ import { Text, View } from "./Themed";
 
 export default function Incorrect({ flagInfo }: { flagInfo: string }) {
   return (
-    <View style={{ flex: 1, alignSelf: "stretch", backgroundColor: "red" }}>
-      <View style={styles.imageContainer}>
-        <Text style={styles.emoji}>❌</Text>
-      </View>
+    <View
+      style={{
+        flex: 1,
+        alignSelf: "stretch",
+        backgroundColor: "red",
+        alignItems: "center",
+      }}
+    >
+      <Image
+        style={styles.flagContainer}
+        source={{
+          uri: "https://flagsapi.com/BR/flat/64.png",
+        }}
+      />
       <View style={styles.titleContainer}>
-        <Text style={styles.titleText}>Correct</Text>
+        <Text style={styles.titleText}>Wrong!</Text>
+        <Text style={styles.titleText}>Answer was Brazil.</Text>
       </View>
       <View style={styles.newLink}>
         <Link href="/two">
@@ -31,11 +42,11 @@ export default function Incorrect({ flagInfo }: { flagInfo: string }) {
 const styles = StyleSheet.create({
   titleContainer: {
     flex: 2,
-    flexDirection: "row",
+    flexDirection: "column",
     alignSelf: "stretch",
     margin: 10,
     justifyContent: "center",
-    alignItems: "flex-start",
+    alignItems: "center",
     backgroundColor: "red",
   },
   buttonRow: {
@@ -49,7 +60,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 4,
   },
   titleText: {
-    fontSize: 50,
+    fontSize: 30,
     fontFamily: "Times New Roman",
     fontWeight: "bold",
   },
@@ -58,7 +69,8 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
     flexDirection: "row",
     alignSelf: "stretch",
-    margin: 10,
+    //margin: 5,
+    marginTop: 5,
     borderBottomLeftRadius: 40,
     borderBottomRightRadius: 40,
     justifyContent: "center",
@@ -75,14 +87,15 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
     flexDirection: "row",
     alignSelf: "stretch",
-    margin: 10,
+    //marginTop: 10,
+    //margin: 5,
     justifyContent: "center",
     alignItems: "center",
   },
   newText: {
-    fontSize: 50,
+    fontSize: 45,
     fontFamily: "Times New Roman",
-    color: "red",
+    //color: "red",
     textAlign: "center",
   },
   separator: {
@@ -98,6 +111,18 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: "red",
+  },
+  flagContainer: {
+    flex: 1.5,
+    aspectRatio: 5 / 3,
+    marginTop: 50,
+    outline: 5,
+    outlineColor: "black",
+
+    //flexDirection: "row",
+    //alignItems: "center",
+    //justifyContent: "center",
+    //alignSelf: "stretch",
   },
   emoji: {
     fontSize: 175,
