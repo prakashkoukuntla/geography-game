@@ -7,20 +7,16 @@ import { Text, View } from "./Themed";
 
 export default function Incorrect({ flagInfo }: { flagInfo: string }) {
   return (
-    <View
-      style={{
-        flex: 1,
-        alignSelf: "stretch",
-        backgroundColor: "red",
-        alignItems: "center",
-      }}
-    >
+    <View style={{ flex: 1, alignSelf: "stretch" }}>
       <Image
         style={styles.flagContainer}
         source={{
           uri: "https://flagsapi.com/BR/flat/64.png",
         }}
       />
+      <View style={styles.imageContainer}>
+        <Text style={styles.emoji}>❌</Text>
+      </View>
       <View style={styles.titleContainer}>
         <Text style={styles.titleText}>Incorrect</Text>
       </View>
@@ -65,7 +61,7 @@ const styles = StyleSheet.create({
   },
   link: {
     flex: 1,
-    backgroundColor: "white",
+    backgroundColor: "red",
     flexDirection: "row",
     alignSelf: "stretch",
     //margin: 5,
@@ -83,7 +79,7 @@ const styles = StyleSheet.create({
   },
   newLink: {
     flex: 1,
-    backgroundColor: "white",
+    backgroundColor: "red",
     flexDirection: "row",
     alignSelf: "stretch",
     //marginTop: 10,
@@ -109,7 +105,6 @@ const styles = StyleSheet.create({
     margin: 10,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "red",
   },
   flagContainer: {
     flex: 1.5,

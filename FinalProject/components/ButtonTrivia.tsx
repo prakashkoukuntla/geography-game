@@ -31,44 +31,51 @@ export default function ButtonTrivia({ flagInfo }: { flagInfo: string }) {
           }}
         />
       </View>
-      <View style={styles.separator} />
+      <Text style={styles.getStartedText}>
+        What is the name of the country that has the flag?
+      </Text>
       <View style={styles.buttonContainer}>
-        <Text style={styles.getStartedText}>
-          What is the name of the country that has the flag?
-        </Text>
-        <View style={styles.buttonRow}>
+        <View style={[styles.button, { backgroundColor: "#FFAEBC" }]}>
           <Button
             onPress={() => {
               0 == correct_answer
                 ? router.push("/correct")
                 : router.push("/incorrect");
             }}
+            color="black"
             title={data[1][0]}
           />
+        </View>
+        <View style={[styles.button, { backgroundColor: "#A0E7E5" }]}>
           <Button
             onPress={() => {
               1 == correct_answer
                 ? router.push("/correct")
                 : router.push("/incorrect");
             }}
+            color="black"
             title={data[1][1]}
           />
         </View>
-        <View style={styles.buttonRow}>
+        <View style={[styles.button, { backgroundColor: "#B4F8C8" }]}>
           <Button
             onPress={() => {
               2 == correct_answer
                 ? router.push("/correct")
                 : router.push("/incorrect");
             }}
+            color="black"
             title={data[1][2]}
           />
+        </View>
+        <View style={[styles.button, { backgroundColor: "#FBE7C6" }]}>
           <Button
             onPress={() => {
               3 == correct_answer
                 ? router.push("/correct")
                 : router.push("/incorrect");
             }}
+            color="black"
             title={data[1][3]}
           />
         </View>
@@ -80,12 +87,16 @@ export default function ButtonTrivia({ flagInfo }: { flagInfo: string }) {
 const styles = StyleSheet.create({
   buttonContainer: {
     alignItems: "center",
-    marginHorizontal: 50,
     flex: 1,
+    alignSelf: "stretch",
   },
-  buttonRow: {
+  button: {
     flexDirection: "row",
-    justifyContent: "space-between",
+    alignSelf: "stretch",
+    justifyContent: "center",
+    margin: 10,
+    borderRadius: 15,
+    color: "black",
   },
   homeScreenFilename: {
     marginVertical: 7,
@@ -95,15 +106,10 @@ const styles = StyleSheet.create({
     paddingHorizontal: 4,
   },
   getStartedText: {
-    fontSize: 17,
-    lineHeight: 24,
+    flex: 1,
+    marginHorizontal: 30,
+    fontSize: 30,
     textAlign: "center",
-  },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: "80%",
-    color: "#f00",
   },
   imageContainer: {
     flex: 1,
@@ -112,7 +118,8 @@ const styles = StyleSheet.create({
   },
   flagImage: {
     resizeMode: "contain",
-    height: 100,
-    width: 200,
+    width: "100%",
+    height: "auto",
+    aspectRatio: 2 / 1,
   },
 });
