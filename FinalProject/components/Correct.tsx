@@ -1,42 +1,49 @@
 import React from "react";
-import { Button, StyleSheet, Image } from "react-native";
+import { Button, StyleSheet, Image, SafeAreaView } from "react-native";
 import { Pressable } from "react-native";
 import { Link } from "expo-router";
 import Colors from "../constants/Colors";
 import { Text, View } from "./Themed";
 
+const green = "#6eaa6b";
+
 export default function Correct({ flagInfo }: { flagInfo: string }) {
   return (
-    <View style={{ flex: 1, alignSelf: "stretch", backgroundColor: "green" }}>
-      <View style={styles.imageContainer}>
-        <Text style={styles.emoji}>🏁</Text>
+    <SafeAreaView
+      style={{ flex: 1, alignSelf: "stretch", backgroundColor: green }}
+    >
+      <View style={{ flex: 1, alignSelf: "stretch", backgroundColor: green }}>
+        <View style={styles.imageContainer}>
+          <Text style={styles.emoji}>🏁</Text>
+        </View>
+        <View style={styles.titleContainer}>
+          <Text style={styles.titleText}>Correct</Text>
+          <Text style={styles.countryText}>Country: </Text>
+        </View>
+        <View style={styles.newView}>
+          <Link href="/two" style={styles.newLink}>
+            <Text style={styles.newText}>New Question</Text>
+          </Link>
+        </View>
+        <View style={styles.homeView}>
+          <Link href="/" style={styles.homeLink}>
+            <Text style={styles.homeText}>Home</Text>
+          </Link>
+        </View>
       </View>
-      <View style={styles.titleContainer}>
-        <Text style={styles.titleText}>Correct</Text>
-      </View>
-      <View style={styles.newLink}>
-        <Link href="/two">
-          <Text style={styles.newText}>New Question</Text>
-        </Link>
-      </View>
-      <View style={styles.link}>
-        <Link href="/">
-          <Text style={styles.homeText}>HOME</Text>
-        </Link>
-      </View>
-    </View>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   titleContainer: {
-    flex: 2,
-    flexDirection: "row",
+    flex: 3,
+    flexDirection: "column",
     alignSelf: "stretch",
+    textAlign: "center",
     margin: 10,
-    justifyContent: "center",
-    alignItems: "flex-start",
-    backgroundColor: "green",
+    alignItems: "center",
+    backgroundColor: green,
   },
   buttonRow: {
     flexDirection: "row",
@@ -53,51 +60,58 @@ const styles = StyleSheet.create({
     fontFamily: "Times New Roman",
     fontWeight: "bold",
   },
-  link: {
+  countryText: {
+    fontSize: 25,
+    fontFamily: "Times New Roman",
+    fontWeight: "normal",
+  },
+  homeLink: {
     flex: 1,
-    backgroundColor: "white",
+  },
+  homeView: {
     flexDirection: "row",
-    alignSelf: "stretch",
+    borderRadius: 40,
     margin: 10,
-    borderBottomLeftRadius: 40,
-    borderBottomRightRadius: 40,
-    justifyContent: "center",
     alignItems: "center",
+    alignSelf: "stretch",
+    backgroundColor: "white",
+    padding: 10,
   },
   homeText: {
-    fontSize: 80,
+    flex: 1,
+    fontSize: 40,
     fontFamily: "Times New Roman",
     color: "black",
     textAlign: "center",
+    alignSelf: "center",
   },
   newLink: {
     flex: 1,
-    backgroundColor: "white",
+  },
+  newView: {
     flexDirection: "row",
-    alignSelf: "stretch",
-    margin: 10,
-    justifyContent: "center",
+    borderRadius: 40,
+    marginHorizontal: 10,
     alignItems: "center",
+    alignSelf: "stretch",
+    padding: 10,
   },
   newText: {
-    fontSize: 50,
+    flex: 1,
+    fontSize: 40,
     fontFamily: "Times New Roman",
-    color: "green",
+    color: "black",
     textAlign: "center",
-  },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: "80%",
+    alignSelf: "center",
   },
   imageContainer: {
-    flex: 2,
+    flex: 3,
     flexDirection: "row",
     alignSelf: "stretch",
     margin: 10,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "green",
+    backgroundColor: green,
   },
   emoji: {
     fontSize: 175,

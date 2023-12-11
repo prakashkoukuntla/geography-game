@@ -1,10 +1,12 @@
 import React from "react";
-import { Button, StyleSheet, Image } from "react-native";
+import { Button, StyleSheet, Image, SafeAreaView } from "react-native";
 import { router } from "expo-router";
 
 import Colors from "../constants/Colors";
 import { Text, View } from "./Themed";
 import backend from "../app/backend";
+
+const grey = "#cececd";
 
 const right_or_wrong = (choice: number, correct: number) => {
   if (choice == correct) {
@@ -22,7 +24,7 @@ export default function ButtonTrivia({ flagInfo }: { flagInfo: string }) {
   data[1][0] = temp;
 
   return (
-    <View>
+    <SafeAreaView style={{ backgroundColor: grey }}>
       <View style={styles.imageContainer}>
         <Image
           style={styles.flagImage}
@@ -80,7 +82,7 @@ export default function ButtonTrivia({ flagInfo }: { flagInfo: string }) {
           />
         </View>
       </View>
-    </View>
+    </SafeAreaView>
   );
 }
 
@@ -89,6 +91,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     flex: 1,
     alignSelf: "stretch",
+    backgroundColor: grey,
   },
   button: {
     flexDirection: "row",
@@ -110,11 +113,13 @@ const styles = StyleSheet.create({
     marginHorizontal: 30,
     fontSize: 30,
     textAlign: "center",
+    backgroundColor: grey,
   },
   imageContainer: {
     flex: 1,
     flexDirection: "column",
     alignSelf: "center",
+    backgroundColor: grey,
   },
   flagImage: {
     resizeMode: "contain",
