@@ -1,24 +1,27 @@
 import React from "react";
 import { Button, StyleSheet, Image } from "react-native";
 import { Pressable } from "react-native";
-import { Link } from "expo-router";
+import { Link, useLocalSearchParams } from "expo-router";
 import Colors from "../constants/Colors";
 import { Text, View } from "./Themed";
 
-export default function Incorrect({ flagInfo }: { flagInfo: string }) {
+export default function Incorrect() {
+  const locals = useLocalSearchParams();
+  console.log(locals.flagInfo);
+  //console.log("hello");
   return (
     <View style={{ flex: 1, alignSelf: "stretch" }}>
       <Image
         style={styles.flagContainer}
         source={{
-          uri: "https://flagsapi.com/BR/flat/64.png",
+          uri: locals.flagInfo,
         }}
       />
-      <View style={styles.imageContainer}>
-        <Text style={styles.emoji}>❌</Text>
-      </View>
+
       <View style={styles.titleContainer}>
-        <Text style={styles.titleText}>Incorrect</Text>
+        <Text style={styles.titleText}>
+          Incorrect. It was {locals.isCorrect}
+        </Text>
       </View>
       <View style={styles.newLink}>
         <Link href="/two">

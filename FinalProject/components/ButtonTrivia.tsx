@@ -17,6 +17,7 @@ const right_or_wrong = (choice: number, correct: number) => {
 };
 
 export default function ButtonTrivia({ flagInfo }: { flagInfo: string }) {
+  console.log("hello");
   let data = backend(); // randomize button order
   let correct_answer: number = Math.floor(Math.random() * 4);
   let temp = data[1][correct_answer];
@@ -42,7 +43,13 @@ export default function ButtonTrivia({ flagInfo }: { flagInfo: string }) {
             onPress={() => {
               0 == correct_answer
                 ? router.push("/correct")
-                : router.push("/incorrect");
+                : router.push({
+                    pathname: "/incorrect",
+                    params: {
+                      flagInfo: data[0],
+                      isCorrect: data[1][correct_answer],
+                    },
+                  });
             }}
             color="black"
             title={data[1][0]}
@@ -53,7 +60,13 @@ export default function ButtonTrivia({ flagInfo }: { flagInfo: string }) {
             onPress={() => {
               1 == correct_answer
                 ? router.push("/correct")
-                : router.push("/incorrect");
+                : router.push({
+                    pathname: "/incorrect",
+                    params: {
+                      flagInfo: data[0],
+                      isCorrect: correct_answer,
+                    },
+                  });
             }}
             color="black"
             title={data[1][1]}
@@ -64,7 +77,13 @@ export default function ButtonTrivia({ flagInfo }: { flagInfo: string }) {
             onPress={() => {
               2 == correct_answer
                 ? router.push("/correct")
-                : router.push("/incorrect");
+                : router.push({
+                    pathname: "/incorrect",
+                    params: {
+                      flagInfo: data[0],
+                      isCorrect: correct_answer,
+                    },
+                  });
             }}
             color="black"
             title={data[1][2]}
@@ -75,7 +94,13 @@ export default function ButtonTrivia({ flagInfo }: { flagInfo: string }) {
             onPress={() => {
               3 == correct_answer
                 ? router.push("/correct")
-                : router.push("/incorrect");
+                : router.push({
+                    pathname: "/incorrect",
+                    params: {
+                      flagInfo: data[0],
+                      isCorrect: correct_answer,
+                    },
+                  });
             }}
             color="black"
             title={data[1][3]}
