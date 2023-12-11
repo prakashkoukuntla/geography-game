@@ -4,48 +4,54 @@ import { Pressable } from "react-native";
 import { Link, useLocalSearchParams } from "expo-router";
 import Colors from "../constants/Colors";
 import { Text, View } from "./Themed";
+import { SafeAreaView } from "react-native";
+
+const red = "#db5856";
+const darkRed = "#521918";
 
 export default function Incorrect() {
   const locals = useLocalSearchParams();
-  console.log(locals.flagInfo);
-  //console.log("hello");
   return (
-    <View style={{ flex: 1, alignSelf: "stretch" }}>
-      <Image
-        style={styles.flagContainer}
-        source={{
-          uri: locals.flagInfo,
-        }}
-      />
-
-      <View style={styles.titleContainer}>
-        <Text style={styles.titleText}>
-          Incorrect. It was {locals.isCorrect}
-        </Text>
+    <SafeAreaView
+      style={{ flex: 1, alignSelf: "stretch", backgroundColor: red }}
+    >
+      <View style={{ flex: 1, alignSelf: "stretch", backgroundColor: red }}>
+        <View style={styles.imageContainer}>
+          <Image
+            style={styles.flagContainer}
+            source={{
+              uri: locals.flagInfo,
+            }}
+          />
+        </View>
+        <View style={styles.titleContainer}>
+          <Text style={styles.titleText}>Incorrect</Text>
+          <Text style={styles.countryText}>Country: {locals.isCorrect}</Text>
+        </View>
+        <View style={styles.newView}>
+          <Link href="/two" style={styles.newLink}>
+            <Text style={styles.newText}>New Question</Text>
+          </Link>
+        </View>
+        <View style={styles.homeView}>
+          <Link href="/" style={styles.homeLink}>
+            <Text style={styles.homeText}>Home</Text>
+          </Link>
+        </View>
       </View>
-      <View style={styles.newLink}>
-        <Link href="/two">
-          <Text style={styles.newText}>New Question</Text>
-        </Link>
-      </View>
-      <View style={styles.link}>
-        <Link href="/">
-          <Text style={styles.homeText}>HOME</Text>
-        </Link>
-      </View>
-    </View>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   titleContainer: {
-    flex: 2,
+    flex: 3,
     flexDirection: "column",
     alignSelf: "stretch",
+    textAlign: "center",
     margin: 10,
-    justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "red",
+    backgroundColor: red,
   },
   buttonRow: {
     flexDirection: "row",
@@ -58,70 +64,70 @@ const styles = StyleSheet.create({
     paddingHorizontal: 4,
   },
   titleText: {
-    fontSize: 30,
+    fontSize: 50,
     fontFamily: "Times New Roman",
     fontWeight: "bold",
   },
-  link: {
+  countryText: {
+    fontSize: 25,
+    fontFamily: "Times New Roman",
+    fontWeight: "normal",
+  },
+  homeLink: {
     flex: 1,
-    backgroundColor: "red",
+  },
+  homeView: {
     flexDirection: "row",
-    alignSelf: "stretch",
-    //margin: 5,
-    marginTop: 5,
-    borderBottomLeftRadius: 40,
-    borderBottomRightRadius: 40,
-    justifyContent: "center",
+    borderRadius: 40,
+    margin: 10,
     alignItems: "center",
+    alignSelf: "stretch",
+    backgroundColor: "white",
+    padding: 10,
   },
   homeText: {
-    fontSize: 80,
+    flex: 1,
+    fontSize: 40,
     fontFamily: "Times New Roman",
     color: "black",
     textAlign: "center",
+    alignSelf: "center",
   },
   newLink: {
     flex: 1,
-    backgroundColor: "red",
+  },
+  newView: {
     flexDirection: "row",
-    alignSelf: "stretch",
-    //marginTop: 10,
-    //margin: 5,
-    justifyContent: "center",
+    borderRadius: 40,
+    marginHorizontal: 10,
     alignItems: "center",
+    alignSelf: "stretch",
+    padding: 10,
   },
   newText: {
-    fontSize: 45,
+    flex: 1,
+    fontSize: 40,
     fontFamily: "Times New Roman",
-    //color: "red",
+    color: "black",
     textAlign: "center",
-  },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: "80%",
+    alignSelf: "center",
   },
   imageContainer: {
-    flex: 2,
+    flex: 3,
     flexDirection: "row",
     alignSelf: "stretch",
     margin: 10,
     justifyContent: "center",
     alignItems: "center",
-  },
-  flagContainer: {
-    flex: 1.5,
-    aspectRatio: 5 / 3,
-    marginTop: 50,
-    outline: 5,
-    outlineColor: "black",
-
-    //flexDirection: "row",
-    //alignItems: "center",
-    //justifyContent: "center",
-    //alignSelf: "stretch",
+    backgroundColor: red,
   },
   emoji: {
     fontSize: 175,
+  },
+  flagContainer: {
+    flex: 1,
+    aspectRatio: 3 / 2,
+    borderColor: darkRed,
+    borderWidth: 15,
   },
 });

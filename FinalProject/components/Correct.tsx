@@ -1,20 +1,27 @@
 import React from "react";
 import { Button, StyleSheet, Image, SafeAreaView } from "react-native";
 import { Pressable } from "react-native";
-import { Link } from "expo-router";
+import { Link, useLocalSearchParams } from "expo-router";
 import Colors from "../constants/Colors";
 import { Text, View } from "./Themed";
 
 const green = "#6eaa6b";
+const darkGreen = "#2f4f2d";
 
-export default function Correct({ flagInfo }: { flagInfo: string }) {
+export default function Correct() {
+  const locals = useLocalSearchParams();
   return (
     <SafeAreaView
       style={{ flex: 1, alignSelf: "stretch", backgroundColor: green }}
     >
       <View style={{ flex: 1, alignSelf: "stretch", backgroundColor: green }}>
         <View style={styles.imageContainer}>
-          <Text style={styles.emoji}>🏁</Text>
+          <Image
+            style={styles.flagContainer}
+            source={{
+              uri: locals.flagInfo,
+            }}
+          />
         </View>
         <View style={styles.titleContainer}>
           <Text style={styles.titleText}>Correct</Text>
@@ -113,7 +120,10 @@ const styles = StyleSheet.create({
     alignItems: "center",
     backgroundColor: green,
   },
-  emoji: {
-    fontSize: 175,
+  flagContainer: {
+    flex: 1,
+    aspectRatio: 3 / 2,
+    borderColor: darkGreen,
+    borderWidth: 15,
   },
 });
