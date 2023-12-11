@@ -22,12 +22,14 @@ export default function TabLayout() {
       screenOptions={{
         //tabBarActiveTintColor: Colors[colorScheme ?? "light"].tint,
         tabBarStyle: { display: "none" },
+        headerShown: false,
       }}
     >
       <Tabs.Screen
         name="index"
         options={{
           title: "Home",
+          headerShown: false,
           //tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
         }}
       />
@@ -35,6 +37,7 @@ export default function TabLayout() {
         name="two"
         options={{
           title: "Trivia Question",
+          headerShown: false,
           //tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
         }}
       />

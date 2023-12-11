@@ -15,7 +15,7 @@ export default function HomePage({ flagInfo }: { flagInfo: string }) {
     >
       <View style={{ flex: 1, alignSelf: "stretch", backgroundColor: grey }}>
         <View style={styles.imageContainer}>
-          <Text style={styles.emoji}>🏁</Text>
+          <Text style={styles.emoji}>🌎</Text>
         </View>
         <View style={styles.titleContainer}>
           <Text style={styles.titleText}>Flagship Trivia</Text>
@@ -54,6 +54,7 @@ const styles = StyleSheet.create({
     fontSize: 50,
     fontFamily: "Times New Roman",
     fontWeight: "bold",
+    textAlign: "center",
   },
   link: {
     flexDirection: "row",
