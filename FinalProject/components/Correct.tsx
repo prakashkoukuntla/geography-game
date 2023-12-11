@@ -14,29 +14,27 @@ export default function Correct() {
     <SafeAreaView
       style={{ flex: 1, alignSelf: "stretch", backgroundColor: green }}
     >
-      <View style={{ flex: 1, alignSelf: "stretch", backgroundColor: green }}>
-        <View style={styles.imageContainer}>
-          <Image
-            style={styles.flagContainer}
-            source={{
-              uri: locals.flagInfo,
-            }}
-          />
-        </View>
-        <View style={styles.titleContainer}>
-          <Text style={styles.titleText}>Correct</Text>
-          <Text style={styles.countryText}>Country: {locals.isCorrect}</Text>
-        </View>
-        <View style={styles.newView}>
-          <Link href="/two" style={styles.newLink}>
-            <Text style={styles.newText}>New Question</Text>
-          </Link>
-        </View>
-        <View style={styles.homeView}>
-          <Link href="/" style={styles.homeLink}>
-            <Text style={styles.homeText}>Home</Text>
-          </Link>
-        </View>
+      <View style={styles.imageContainer}>
+        <Image
+          style={styles.flagContainer}
+          source={{
+            uri: locals.flagInfo,
+          }}
+        />
+      </View>
+      <View style={styles.titleContainer}>
+        <Text style={styles.titleText}>Correct</Text>
+        <Text style={styles.countryText}>Country: {locals.isCorrect}</Text>
+      </View>
+      <View style={styles.newView}>
+        <Link href="/two" style={styles.newLink}>
+          <Text style={styles.newText}>New Question</Text>
+        </Link>
+      </View>
+      <View style={styles.homeView}>
+        <Link href="/" style={styles.homeLink}>
+          <Text style={styles.homeText}>Home</Text>
+        </Link>
       </View>
     </SafeAreaView>
   );
@@ -54,13 +52,6 @@ const styles = StyleSheet.create({
   },
   buttonRow: {
     flexDirection: "row",
-  },
-  homeScreenFilename: {
-    marginVertical: 7,
-  },
-  codeHighlightContainer: {
-    borderRadius: 3,
-    paddingHorizontal: 4,
   },
   titleText: {
     fontSize: 50,

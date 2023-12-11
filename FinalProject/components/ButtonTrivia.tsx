@@ -145,7 +145,7 @@ export default function ButtonTrivia({ flagInfo }: { flagInfo: string }) {
 
 const styles = StyleSheet.create({
   titleContainer: {
-    flex: 1,
+    flex: 3,
     flexDirection: "column",
     alignSelf: "center",
     width: "80%",
@@ -160,13 +160,11 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     fontSize: 20,
-    padding: 7,
     fontFamily: "Times New Roman",
-    //fontWeight: "bold",
     textAlign: "center",
   },
   imageContainer: {
-    flex: 1,
+    flex: 3,
     flexDirection: "row",
     alignSelf: "stretch",
     margin: 10,
@@ -181,19 +179,21 @@ const styles = StyleSheet.create({
     borderWidth: 15,
   },
   buttonContainer: {
-    flex: 1,
+    flex: 2,
+    flexDirection: "column",
     backgroundColor: grey,
   },
   button: {
+    flex: 1,
+    marginVertical: 5,
     flexDirection: "row",
-    alignSelf: "stretch",
-    justifyContent: "center",
-    margin: 10,
+    marginHorizontal: 10,
     borderRadius: 15,
     color: "black",
+    alignSelf: "stretch",
   },
   buttonPress: {
-    //backgroundColor: "red",
     flex: 1,
+    justifyContent: "center",
   },
 });
