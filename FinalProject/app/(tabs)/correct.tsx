@@ -5,7 +5,7 @@ import Correct from "../../components/Correct";
 export default function CorrectScreen() {
   return (
     <View style={styles.container}>
-      <Correct flagInfo="app/(tabs)/Correct.tsx" />
+      <Correct />
     </View>
   );
 }

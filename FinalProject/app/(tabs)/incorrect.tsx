@@ -5,7 +5,7 @@ import Incorrect from "../../components/Incorrect";
 export default function IncorrectScreen() {
   return (
     <View style={styles.container}>
-      <Incorrect flagInfo="app/(tabs)/Incorrect.tsx" />
+      <Incorrect />
     </View>
   );
 }
