@@ -17,7 +17,6 @@ const right_or_wrong = (choice: number, correct: number) => {
 };
 
 export default function ButtonTrivia({ flagInfo }: { flagInfo: string }) {
-  console.log("hello");
   let data = backend(); // randomize button order
   let correct_answer: number = Math.floor(Math.random() * 4);
   let temp = data[1][correct_answer];
