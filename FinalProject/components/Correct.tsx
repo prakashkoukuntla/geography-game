@@ -25,7 +25,7 @@ export default function Correct() {
         </View>
         <View style={styles.titleContainer}>
           <Text style={styles.titleText}>Correct</Text>
-          <Text style={styles.countryText}>Country: </Text>
+          <Text style={styles.countryText}>Country: {locals.isCorrect}</Text>
         </View>
         <View style={styles.newView}>
           <Link href="/two" style={styles.newLink}>

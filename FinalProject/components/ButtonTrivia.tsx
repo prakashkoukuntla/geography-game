@@ -42,7 +42,13 @@ export default function ButtonTrivia({ flagInfo }: { flagInfo: string }) {
           <Button
             onPress={() => {
               0 == correct_answer
-                ? router.push("/correct")
+                ? router.push({
+                    pathname: "/correct",
+                    params: {
+                      flagInfo: data[0],
+                      isCorrect: data[1][correct_answer],
+                    },
+                  })
                 : router.push({
                     pathname: "/incorrect",
                     params: {
@@ -59,7 +65,13 @@ export default function ButtonTrivia({ flagInfo }: { flagInfo: string }) {
           <Button
             onPress={() => {
               1 == correct_answer
-                ? router.push("/correct")
+                ? router.push({
+                    pathname: "/correct",
+                    params: {
+                      flagInfo: data[0],
+                      isCorrect: data[1][correct_answer],
+                    },
+                  })
                 : router.push({
                     pathname: "/incorrect",
                     params: {
@@ -76,7 +88,13 @@ export default function ButtonTrivia({ flagInfo }: { flagInfo: string }) {
           <Button
             onPress={() => {
               2 == correct_answer
-                ? router.push("/correct")
+                ? router.push({
+                    pathname: "/correct",
+                    params: {
+                      flagInfo: data[0],
+                      isCorrect: data[1][correct_answer],
+                    },
+                  })
                 : router.push({
                     pathname: "/incorrect",
                     params: {
@@ -93,7 +111,13 @@ export default function ButtonTrivia({ flagInfo }: { flagInfo: string }) {
           <Button
             onPress={() => {
               3 == correct_answer
-                ? router.push("/correct")
+                ? router.push({
+                    pathname: "/correct",
+                    params: {
+                      flagInfo: data[0],
+                      isCorrect: data[1][correct_answer],
+                    },
+                  })
                 : router.push({
                     pathname: "/incorrect",
                     params: {
