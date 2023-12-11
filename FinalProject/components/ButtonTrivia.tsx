@@ -64,7 +64,7 @@ export default function ButtonTrivia({ flagInfo }: { flagInfo: string }) {
                     pathname: "/incorrect",
                     params: {
                       flagInfo: data[0],
-                      isCorrect: correct_answer,
+                      isCorrect: data[1][correct_answer],
                     },
                   });
             }}
@@ -81,7 +81,7 @@ export default function ButtonTrivia({ flagInfo }: { flagInfo: string }) {
                     pathname: "/incorrect",
                     params: {
                       flagInfo: data[0],
-                      isCorrect: correct_answer,
+                      isCorrect: data[1][correct_answer],
                     },
                   });
             }}
@@ -98,7 +98,7 @@ export default function ButtonTrivia({ flagInfo }: { flagInfo: string }) {
                     pathname: "/incorrect",
                     params: {
                       flagInfo: data[0],
-                      isCorrect: correct_answer,
+                      isCorrect: data[1][correct_answer],
                     },
                   });
             }}
