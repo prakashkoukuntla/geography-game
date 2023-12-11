@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, StyleSheet, Image, SafeAreaView } from "react-native";
+import { StyleSheet, Image, SafeAreaView, Pressable } from "react-native";
 import { router } from "expo-router";
 
 import Colors from "../constants/Colors";
@@ -7,6 +7,7 @@ import { Text, View } from "./Themed";
 import backend from "../app/backend";
 
 const grey = "#cececd";
+const darkGrey = "#7d7d7d";
 
 const right_or_wrong = (choice: number, correct: number) => {
   if (choice == correct) {
@@ -24,21 +25,25 @@ export default function ButtonTrivia({ flagInfo }: { flagInfo: string }) {
   data[1][0] = temp;
 
   return (
-    <SafeAreaView style={{ backgroundColor: grey }}>
+    <SafeAreaView
+      style={{ flex: 1, alignSelf: "stretch", backgroundColor: grey }}
+    >
       <View style={styles.imageContainer}>
         <Image
-          style={styles.flagImage}
+          style={styles.flagContainer}
           source={{
             uri: data[0],
           }}
         />
       </View>
-      <Text style={styles.getStartedText}>
-        What is the name of the country that has the flag?
-      </Text>
+      <View style={styles.titleContainer}>
+        <Text style={styles.titleText}>
+          Which country does the flag belong to?
+        </Text>
+      </View>
       <View style={styles.buttonContainer}>
         <View style={[styles.button, { backgroundColor: "#FFAEBC" }]}>
-          <Button
+          <Pressable
             onPress={() => {
               0 == correct_answer
                 ? router.push({
@@ -56,12 +61,13 @@ export default function ButtonTrivia({ flagInfo }: { flagInfo: string }) {
                     },
                   });
             }}
-            color="black"
-            title={data[1][0]}
-          />
+            style={styles.buttonPress}
+          >
+            <Text style={styles.buttonText}>{data[1][0]}</Text>
+          </Pressable>
         </View>
         <View style={[styles.button, { backgroundColor: "#A0E7E5" }]}>
-          <Button
+          <Pressable
             onPress={() => {
               1 == correct_answer
                 ? router.push({
@@ -79,12 +85,13 @@ export default function ButtonTrivia({ flagInfo }: { flagInfo: string }) {
                     },
                   });
             }}
-            color="black"
-            title={data[1][1]}
-          />
+            style={styles.buttonPress}
+          >
+            <Text style={styles.buttonText}>{data[1][1]}</Text>
+          </Pressable>
         </View>
         <View style={[styles.button, { backgroundColor: "#B4F8C8" }]}>
-          <Button
+          <Pressable
             onPress={() => {
               2 == correct_answer
                 ? router.push({
@@ -102,12 +109,13 @@ export default function ButtonTrivia({ flagInfo }: { flagInfo: string }) {
                     },
                   });
             }}
-            color="black"
-            title={data[1][2]}
-          />
+            style={styles.buttonPress}
+          >
+            <Text style={styles.buttonText}>{data[1][2]}</Text>
+          </Pressable>
         </View>
         <View style={[styles.button, { backgroundColor: "#FBE7C6" }]}>
-          <Button
+          <Pressable
             onPress={() => {
               3 == correct_answer
                 ? router.push({
@@ -125,9 +133,10 @@ export default function ButtonTrivia({ flagInfo }: { flagInfo: string }) {
                     },
                   });
             }}
-            color="black"
-            title={data[1][3]}
-          />
+            style={styles.buttonPress}
+          >
+            <Text style={styles.buttonText}>{data[1][3]}</Text>
+          </Pressable>
         </View>
       </View>
     </SafeAreaView>
@@ -135,10 +144,44 @@ export default function ButtonTrivia({ flagInfo }: { flagInfo: string }) {
 }
 
 const styles = StyleSheet.create({
-  buttonContainer: {
-    alignItems: "center",
+  titleContainer: {
     flex: 1,
+    flexDirection: "column",
+    alignSelf: "center",
+    width: "80%",
+    justifyContent: "center",
+    backgroundColor: grey,
+  },
+  titleText: {
+    fontSize: 30,
+    fontFamily: "Times New Roman",
+    fontWeight: "bold",
+    textAlign: "center",
+  },
+  buttonText: {
+    fontSize: 20,
+    padding: 7,
+    fontFamily: "Times New Roman",
+    //fontWeight: "bold",
+    textAlign: "center",
+  },
+  imageContainer: {
+    flex: 1,
+    flexDirection: "row",
     alignSelf: "stretch",
+    margin: 10,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: grey,
+  },
+  flagContainer: {
+    flex: 1,
+    aspectRatio: 3 / 2,
+    borderColor: darkGrey,
+    borderWidth: 15,
+  },
+  buttonContainer: {
+    flex: 1,
     backgroundColor: grey,
   },
   button: {
@@ -149,30 +192,8 @@ const styles = StyleSheet.create({
     borderRadius: 15,
     color: "black",
   },
-  homeScreenFilename: {
-    marginVertical: 7,
-  },
-  codeHighlightContainer: {
-    borderRadius: 3,
-    paddingHorizontal: 4,
-  },
-  getStartedText: {
+  buttonPress: {
+    //backgroundColor: "red",
     flex: 1,
-    marginHorizontal: 30,
-    fontSize: 30,
-    textAlign: "center",
-    backgroundColor: grey,
-  },
-  imageContainer: {
-    flex: 1,
-    flexDirection: "column",
-    alignSelf: "center",
-    backgroundColor: grey,
-  },
-  flagImage: {
-    resizeMode: "contain",
-    width: "100%",
-    height: "auto",
-    aspectRatio: 2 / 1,
   },
 });
